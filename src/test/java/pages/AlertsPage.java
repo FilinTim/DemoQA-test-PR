@@ -19,6 +19,9 @@ public class AlertsPage extends BasePage {
     }
 
     public void clickConfirmAndAccept() {
+        org.openqa.selenium.support.ui.WebDriverWait wait = 
+            new org.openqa.selenium.support.ui.WebDriverWait(driver, java.time.Duration.ofSeconds(10));
+        wait.until(org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable(confirmButton));
         driver.findElement(confirmButton).click();
         Alert alert = driver.switchTo().alert();
         alert.accept();
@@ -26,6 +29,9 @@ public class AlertsPage extends BasePage {
     }
 
     public void clickConfirmAndDismiss() {
+        org.openqa.selenium.support.ui.WebDriverWait wait = 
+            new org.openqa.selenium.support.ui.WebDriverWait(driver, java.time.Duration.ofSeconds(10));
+        wait.until(org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable(confirmButton));
         driver.findElement(confirmButton).click();
         Alert alert = driver.switchTo().alert();
         alert.dismiss();

@@ -37,6 +37,9 @@ public class TextBoxPage extends BasePage {
     }
 
     public void submit() {
+        org.openqa.selenium.support.ui.WebDriverWait wait = 
+            new org.openqa.selenium.support.ui.WebDriverWait(driver, java.time.Duration.ofSeconds(10));
+        wait.until(org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable(submit));
         driver.findElement(submit).click();
     }
 
